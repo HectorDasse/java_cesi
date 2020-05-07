@@ -34,13 +34,7 @@ public class CompteEpargne {
         this.intitule = intitule;
     }
 
-    public double add_solde(double nombre){
-        this.solde += nombre;
-
-        return this.solde;
-    }
-
-    public CompteEpargne(double solde, String numero, double taauxInteret, String intitule) {
+    CompteEpargne(double solde, String numero, double taauxInteret, String intitule) {
         this.solde = solde;
         this.numero = numero;
         this.tauxInteret = taauxInteret;
@@ -55,5 +49,15 @@ public class CompteEpargne {
             System.out.println("Fond insufisant");
         }
         return this.solde;
+    }
+
+    public double add_solde(double nombre){
+        this.solde += nombre;
+
+        return this.solde;
+    }
+
+    public double calculerInteret(){
+        return (this.solde * this.tauxInteret) / 100;
     }
 }
