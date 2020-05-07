@@ -20,23 +20,20 @@ public class ComtpeCourantTest {
     @Test
     public void crediter(){
         CompteCourant compte1 = new CompteCourant("1", "toto", argent_de_base, (double) 150);
-        compte1.add_solde(un_nombre);
-        assertEquals(argent_de_base + un_nombre, compte1.solde);
+        assertEquals(argent_de_base + un_nombre, compte1.add_solde(un_nombre));
 
     }
 
     @Test
     public void debiter(){
         CompteCourant compte1 = new CompteCourant("1", "toto", argent_de_base, (double) 150);
-        compte1.less_solde(20);
-        assertEquals(argent_de_base - 20, compte1.solde);
+        assertEquals(argent_de_base - 20, compte1.less_solde(20));
 
     }
 
     @Test
     public void test_debi_plus_important_que_decouvert(){
         CompteCourant compte1 = new CompteCourant("1", "toto", argent_de_base, (double) 20);
-        compte1.less_solde(un_nombre);
-        assertEquals(argent_de_base, compte1.solde);
+        assertEquals(argent_de_base, compte1.less_solde(un_nombre));
     }
 }

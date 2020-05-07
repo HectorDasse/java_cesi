@@ -2,11 +2,11 @@ package jsp;
 
 public class CompteCourant {
 
-    public String intitule;
-    public double solde;
-    public Double montantDecouvertAutorise;
+    private String intitule;
+    private double solde;
+    private Double montantDecouvertAutorise;
     public static int nbCompteCourants;
-    public String numero;
+    private String numero;
 
     public String getNumero() {
         return numero;
@@ -49,11 +49,13 @@ public class CompteCourant {
     }
 
 
-    public void add_solde(double nombre){
+    public double add_solde(double nombre){
         this.solde += nombre;
+
+        return this.solde;
     }
 
-    public void less_solde(double nombre){
+    public double less_solde(double nombre){
         double montant = this.solde - nombre;
 
         if (montant < 0){
@@ -65,8 +67,6 @@ public class CompteCourant {
         }else {
             this.solde = montant;
         }
-
-
-
+        return this.solde;
     }
 }
