@@ -8,6 +8,10 @@ public class CompteCourant {
     public static int nbCompteCourants;
     private String numero;
 
+    public double getSolde() {
+        return solde;
+    }
+
     public String getNumero() {
         return numero;
     }
