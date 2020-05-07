@@ -1,32 +1,10 @@
 package jsp;
 
-public class CompteCourant {
+public class CompteCourant extends Compte{
 
-    private String intitule;
-    private double solde;
     private Double montantDecouvertAutorise;
     public static int nbCompteCourants;
-    private String numero;
 
-    public double getSolde() {
-        return solde;
-    }
-
-    public String getNumero() {
-        return numero;
-    }
-
-    public void setNumero(String numero) {
-        this.numero = numero;
-    }
-
-    public String getIntitule() {
-        return intitule;
-    }
-
-    public void setIntitule(String intitule) {
-        this.intitule = intitule;
-    }
 
     public Double getMontantDecouvertAutorise() {
         return montantDecouvertAutorise;
@@ -52,12 +30,6 @@ public class CompteCourant {
         this.nbCompteCourants ++;
     }
 
-
-    public double add_solde(double nombre){
-        this.solde += nombre;
-
-        return this.solde;
-    }
 
     public double less_solde(double nombre){
         double montant = this.solde - nombre;

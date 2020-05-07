@@ -1,22 +1,10 @@
 package jsp;
 
-public class CompteEpargne {
-    private double solde;
-    private String numero;
+public class CompteEpargne extends Compte{
+
     private double tauxInteret;
-    private String intitule;
 
-    public double getSolde() {
-        return solde;
-    }
 
-    public String getNumero() {
-        return numero;
-    }
-
-    public void setNumero(String numero) {
-        this.numero = numero;
-    }
 
     public double getTauxInteret() {
         return tauxInteret;
@@ -26,13 +14,7 @@ public class CompteEpargne {
         this.tauxInteret = tauxInteret;
     }
 
-    public String getIntitule() {
-        return intitule;
-    }
 
-    public void setIntitule(String intitule) {
-        this.intitule = intitule;
-    }
 
     CompteEpargne(double solde, String numero, double taauxInteret, String intitule) {
         this.solde = solde;
@@ -51,11 +33,6 @@ public class CompteEpargne {
         return this.solde;
     }
 
-    public double add_solde(double nombre){
-        this.solde += nombre;
-
-        return this.solde;
-    }
 
     public double calculerInteret(){
         return (this.solde * this.tauxInteret) / 100;
